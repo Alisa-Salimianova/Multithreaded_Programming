@@ -15,6 +15,9 @@ class PhoneBookTests {
         int c2 = pb.add("Bob", "222");
         assertEquals(2, c2);
 
+        assertEquals("111", pb.findByName("Alice"));
+        assertEquals("222", pb.findByName("Bob"));
+
     }
 
     @Test
@@ -44,5 +47,14 @@ class PhoneBookTests {
         assertEquals("333", pb.findByName("Charlie"));
         assertNull(pb.findByName("Unknown"));
     }
+    @Test
+    void printAllNames_returnsNamesInAlphabeticalOrder() {
+        PhoneBook pb = new PhoneBook();
+        pb.add("Dima", "444");
+        pb.add("Alex", "101");
+        pb.add("Boris", "202");
 
+        List<String> names = pb.printAllNames();
+        assertEquals(List.of("Alex", "Boris", "Dima"), names);
+    }
 }

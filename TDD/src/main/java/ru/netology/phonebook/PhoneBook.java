@@ -26,6 +26,10 @@ public class PhoneBook {
             Objects.requireNonNull(name, "name must not be null");
             return nameToNumber.get(name);
         }
+
+        public List<String> printAllNames() {
+            return new ArrayList<>(nameToNumber.keySet());
+        }
 }
 
 
