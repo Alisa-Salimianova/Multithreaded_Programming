@@ -20,7 +20,12 @@ public class PhoneBook {
         public String findByNumber(String number) {
                 Objects.requireNonNull(number, "number must not be null");
                 return numberToName.get(number);
-            }
+        }
+
+        public String findByName(String name) {
+
+            return null;
+        }
 }
 
 
