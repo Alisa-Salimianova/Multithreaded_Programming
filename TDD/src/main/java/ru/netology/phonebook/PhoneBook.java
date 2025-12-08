@@ -16,4 +16,9 @@ public class PhoneBook {
         numberToName.put(number, name);
         return nameToNumber.size();
     }
-}
+
+        public String findByNumber(String number) {
+                return null;
+        }
+
+    }

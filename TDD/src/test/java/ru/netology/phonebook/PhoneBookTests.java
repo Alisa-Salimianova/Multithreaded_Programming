@@ -15,8 +15,6 @@ class PhoneBookTests {
         int c2 = pb.add("Bob", "222");
         assertEquals(2, c2);
 
-       // assertEquals("111", pb.findByName("Alice"));
-        //assertEquals("222", pb.findByName("Bob"));
     }
 
     @Test
@@ -25,5 +23,16 @@ class PhoneBookTests {
         pb.add("Alice", "111");
         int before = pb.add("Alice", "111"); // добавление с тем же именем — не изменит размер
         assertEquals(1, before);
+    }
+
+    @Test
+    void findByNumber_returnsNameWithoutFullScan() {
+        PhoneBook pb = new PhoneBook();
+        pb.add("Alice", "111");
+        pb.add("Bob", "222");
+
+        assertEquals("Alice", pb.findByNumber("111"));
+        assertEquals("Bob", pb.findByNumber("222"));
+        assertNull(pb.findByNumber("333"));
     }
 }
