@@ -18,7 +18,9 @@ public class PhoneBook {
     }
 
         public String findByNumber(String number) {
-                return null;
-        }
+                Objects.requireNonNull(number, "number must not be null");
+                return numberToName.get(number);
+            }
+}
 
-    }
+
